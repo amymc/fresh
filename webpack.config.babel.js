@@ -18,7 +18,7 @@ var config = {
     ],
   },
   postcss: function () {
-    return [require('postcss-autoreset'), require('postcss-nesting'), require('postcss-nested')];
+    return [require('postcss-autoreset')];
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
