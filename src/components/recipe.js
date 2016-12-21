@@ -6,19 +6,37 @@ class Recipe extends React.Component {
     super(props);
 
     this.state = {
-      isFavourite: false
+      isFavourite: false,
+      rating: null
     };
 
-    this.favouriteItem = this.favouriteItem .bind(this);
+    this.favouriteItem = this.favouriteItem.bind(this);
+    this.rateItem = this.rateItem.bind(this);
+    this.renderRating = this.renderRating.bind(this);
   }
 
   favouriteItem() {
-    console.log('favourite');
     if (this.state.isFavourite) {
       this.setState({isFavourite: false});
       return;
     }
     this.setState({isFavourite: true});
+  }
+
+  rateItem(index) {
+    this.setState({rating: index});
+  }
+
+  renderRating() {
+    var stars = [];
+    for (let i=1; i < 6; i++) {
+      stars.push( 
+        <span className={'recipe__rating' + (this.state.rating >= i ? ' recipe__rating--active' : '')} data-number={i} key={i} onClick={() => this.rateItem(i)}>
+          &#x2605;
+        </span>
+      );
+    }
+    return stars;
   }
 
   render() {
@@ -39,6 +57,7 @@ class Recipe extends React.Component {
           </p>
         </div>
         <button className={'recipe__button' + (this.state.isFavourite ? ' recipe__button--selected' : '')} onClick={() => this.favouriteItem()}>&hearts;</button>
+        {this.renderRating()}
       </div>
     )
   }

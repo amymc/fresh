@@ -1,3 +1,7 @@
+.recipe__rating--active {
+  color: red;
+}
+
 .recipe__button--selected {
   color: red;
 }
