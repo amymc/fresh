@@ -1,5 +1,4 @@
-
-[
+const recipes = [
     {
         "calories": "516 kcal",
         "carbos": "47 g",
@@ -516,4 +515,6 @@
             "2013-W28"
         ]
     }
-]
+];
+
+export default recipes;

@@ -1,10 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const RecipeViewer = (props) => {
-  return (
-    <div className='recipe-viewer'>
-    </div>
-  )
+
+class RecipeViewer extends React.Component {
+  render() {
+    const { recipes } = this.props;
+
+    return (
+      <div className='recipe-viewer'>
+      </div>
+    );
+  }
 }
 
-export default RecipeViewer;
+function mapStateToProps(state) {
+  return {
+    recipes: state.recipes
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  null
+)(RecipeViewer);
