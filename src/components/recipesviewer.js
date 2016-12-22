@@ -1,8 +1,8 @@
 import React from 'react';
 import Login from './login';
-import RecipeViewer from './recipeviewer';
+import RecipesWrapper from './recipeswrapper';
 
-class App extends React.Component {
+class RecipesViewer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -39,25 +39,25 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <header className="recipe-viewer__header">
-          <h1 className="recipe-viewer__title" >
+        <header className='recipes-viewer__header'>
+          <h1 className='recipes-viewer__title'>
             Recipes
           </h1>
           {this.state.isLoggedIn ?
             null :
-            <button onClick={() => this.displayLogin()}> Login </button>
+            <button className='recipes-viewer__button' onClick={() => this.displayLogin()}> Login </button>
           }
         </header>
         {this.state.showLogin ?
           <Login onSubmit={this.hideLogin} onClick={this.closeLogin}/> :
           null
         }
-        <RecipeViewer showLogin={this.state.showLogin} />
+        <RecipesWrapper showLogin={this.state.showLogin} />
       </div>
     )
   }
 }
 
-export default App;
+export default RecipesViewer;
 
 
