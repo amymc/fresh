@@ -56,6 +56,13 @@ class Recipe extends React.Component {
           <p>
             {recipe.description}
           </p>
+          <table className='recipe__table'>
+            <tbody>
+                { recipe.ingredients.map((ingredient, index) => {
+                  return <tr><td>{ingredient}</td></tr>
+                })}
+            </tbody>
+          </table>
           <NutritionalInfo {...recipe} />
         </div>
         <button className={'recipe__button' + (this.state.isFavourite ? ' recipe__button--selected' : '')} onClick={() => this.favouriteItem()}>&hearts;</button>
