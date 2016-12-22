@@ -7,21 +7,45 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      isLoggedIn: true
-    }
+      isLoggedIn: false,
+      showLogin: false
+    };
+
+    this.hideLogin = this.hideLogin.bind(this);
+  }
+
+  displayLogin() {
+    this.setState({
+      isLoggedIn: false,
+      showLogin: true}
+      );
+  }
+
+  hideLogin(e) {
+    e.preventDefault();
+    this.setState({
+      isLoggedIn: true,
+      showLogin: false
+    });
   }
 
   render() {
     return (
-      <div className="recipe-viewer">
+      <div>
         <header className="recipe-viewer__header">
           <h1 className="recipe-viewer__title" >
-            Hello Fresh Recipes
+            Recipes
           </h1>
+          {this.state.isLoggedIn ?
+            null :
+            <button onClick={() => this.displayLogin()}> Login </button>
+          }
         </header>
-        {this.state.isLoggedIn ?
-          <RecipeViewer /> :
-          <Login /> }
+        {this.state.showLogin ?
+          <Login onSubmit={this.hideLogin} /> :
+          null
+        }
+        <RecipeViewer showLogin={this.state.showLogin} />
       </div>
     )
   }

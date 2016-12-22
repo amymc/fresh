@@ -1,0 +1,15 @@
+.recipe__viewer--fixed {
+  position: fixed;
+  width: 100%;
+}
+
+.recipe__viewer--fixed::after {
+  background-color: rgba(17,17,17,0.8);
+  content: '';
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
