@@ -1,3 +1,7 @@
+.recipes-wrapper {
+  padding: 1rem;
+}
+
 .recipes-wrapper--fixed {
   position: fixed;
   width: 100%;

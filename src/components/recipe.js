@@ -1,4 +1,5 @@
 import React from 'react';
+import NutritionalInfo  from './nutritionalinfo';
 import './../styles/recipe.css';
 
 class Recipe extends React.Component {
@@ -55,6 +56,7 @@ class Recipe extends React.Component {
           <p>
             {recipe.description}
           </p>
+          <NutritionalInfo {...recipe} />
         </div>
         <button className={'recipe__button' + (this.state.isFavourite ? ' recipe__button--selected' : '')} onClick={() => this.favouriteItem()}>&hearts;</button>
         {this.renderRating()}
