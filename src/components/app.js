@@ -11,14 +11,21 @@ class App extends React.Component {
       showLogin: false
     };
 
+    this.closeLogin = this.closeLogin.bind(this);
     this.hideLogin = this.hideLogin.bind(this);
+  }
+
+  closeLogin(e) {
+    e.preventDefault();
+    this.setState({
+      showLogin: false
+    });
   }
 
   displayLogin() {
     this.setState({
-      isLoggedIn: false,
-      showLogin: true}
-      );
+      showLogin: true
+    });
   }
 
   hideLogin(e) {
@@ -42,7 +49,7 @@ class App extends React.Component {
           }
         </header>
         {this.state.showLogin ?
-          <Login onSubmit={this.hideLogin} /> :
+          <Login onSubmit={this.hideLogin} onClick={this.closeLogin}/> :
           null
         }
         <RecipeViewer showLogin={this.state.showLogin} />

@@ -10,6 +10,15 @@
   z-index: 1;
 }
 
+.login__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-weight: bold;
+  font-family: arial, sans-serif;
+  cursor: pointer;
+}
+
 .login__label {
   display: block;
 }

@@ -2,12 +2,14 @@ import React from 'react';
 import './../styles/login.css';
 
 const Login = (props) => {
-  console.log('props', props);
   return (
     <form className='login' onSubmit={props.onSubmit}>
       <h1 className='login__title'>
         Login
       </h1>
+      <button className='login__close' onClick={props.onClick}>
+        X
+      </button>
       <label className='login__label'>
         <span>Email address: </span>
         <input className='login__input' type='email' name='email address' required />
