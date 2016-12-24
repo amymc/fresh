@@ -13,6 +13,7 @@ class Recipe extends React.Component {
 
     this.favouriteItem = this.favouriteItem.bind(this);
     this.rateItem = this.rateItem.bind(this);
+    this.renderCookingTime = this.renderCookingTime.bind(this);
     this.renderRating = this.renderRating.bind(this);
   }
 
@@ -26,6 +27,11 @@ class Recipe extends React.Component {
 
   rateItem(index) {
     this.setState({rating: index});
+  }
+
+  renderCookingTime(time) {
+    let minutes = time.slice(2, 4);
+    return (<p> Cooking Time: {minutes} minutes</p>);
   }
 
   renderRating() {
@@ -56,11 +62,14 @@ class Recipe extends React.Component {
           <p>
             {recipe.description}
           </p>
+          {this.renderCookingTime(recipe.time)}
+          <p>Difficulty level: {recipe.difficulty}</p>
+          <p>This is a recipe for the {recipe.products[0]}</p>
           <table className='recipe__table'>
             <tbody>
-                { recipe.ingredients.map((ingredient, index) => {
-                  return <tr><td>{ingredient}</td></tr>
-                })}
+              { recipe.ingredients.map((ingredient, index) => {
+                return <tr key={index}><td>{ingredient}</td></tr>
+              })}
             </tbody>
           </table>
           <NutritionalInfo {...recipe} />
