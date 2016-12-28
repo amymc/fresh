@@ -1,6 +1,6 @@
 import React from 'react';
 import NutritionalInfo  from './nutritionalinfo';
-import './../styles/recipe.css';
+import './../styles/recipe.scss';
 
 class Recipe extends React.Component {
   constructor(props) {

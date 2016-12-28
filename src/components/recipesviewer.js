@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from './login';
 import RecipesWrapper from './recipeswrapper';
-import './../styles/recipesviewer.css';
+import './../styles/recipesviewer.scss';
 
 class RecipesViewer extends React.Component {
   constructor(props) {

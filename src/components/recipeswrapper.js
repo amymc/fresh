@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Recipe from './recipe';
-import './../styles/recipeswrapper.css';
+import './../styles/recipeswrapper.scss';
 
 class RecipesWrapper extends React.Component {
   render() {
