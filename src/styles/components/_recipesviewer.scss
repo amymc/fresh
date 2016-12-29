@@ -1,7 +1,25 @@
 .recipes-viewer{
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__inner-wrapper {
+    position: relative;
+  }
+
   &__header {
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    max-width: 1140px;
+    margin: 0 16px;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    padding: 30px 0;
+    box-shadow: 0 1px 0 #ccc;
+    background-color: #fff;
   }
 
   &__title {

@@ -38,21 +38,23 @@ class RecipesViewer extends React.Component {
 
   render() {
     return (
-      <div>
-        <header className='recipes-viewer__header'>
-          <h1 className='recipes-viewer__title'>
-            Recipes
-          </h1>
-          {this.state.isLoggedIn ?
-            null :
-            <button className='recipes-viewer__button' onClick={() => this.displayLogin()}> Login </button>
+      <div className='recipes-viewer'>
+        <div className='recipes-viewer__inner-wrapper'>
+          <header className='recipes-viewer__header'>
+            <h1 className='recipes-viewer__title'>
+              Recipes
+            </h1>
+            {this.state.isLoggedIn ?
+              null :
+              <button className='recipes-viewer__button' onClick={() => this.displayLogin()}> Login </button>
+            }
+          </header>
+          {this.state.showLogin ?
+            <Login onSubmit={this.hideLogin} onClick={this.closeLogin}/> :
+            null
           }
-        </header>
-        {this.state.showLogin ?
-          <Login onSubmit={this.hideLogin} onClick={this.closeLogin}/> :
-          null
-        }
-        <RecipesWrapper showLogin={this.state.showLogin} />
+          <RecipesWrapper showLogin={this.state.showLogin} />
+        </div>
       </div>
     )
   }
