@@ -5,16 +5,14 @@
   }
 
   &__title {
-    font-size: 2rem;
-    font-family: arial, sans-serif;
+    font-size: 3.5rem;
   }
 
   &__button {
     border-radius: 2px;
-    background-color: #91c11e;
+    background-color: $hellofresh-lime;
     padding: 5px;
     color: white;
     letter-spacing: 1px;
-    font-family: arial, sans-serif;
   }
 }

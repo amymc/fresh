@@ -1,5 +1,4 @@
  import React from 'react';
-//import './../styles/nutritionalinfo .css';
 
 const NutritionalInfo = (props) => {
   return (
