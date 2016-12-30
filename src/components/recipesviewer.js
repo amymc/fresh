@@ -1,6 +1,6 @@
 import React from 'react';
 import Login from './login';
-import RecipesWrapper from './recipeswrapper';
+import RecipesBlock from './recipesblock';
 
 class RecipesViewer extends React.Component {
   constructor(props) {
@@ -53,7 +53,7 @@ class RecipesViewer extends React.Component {
             <Login onSubmit={this.hideLogin} onClick={this.closeLogin}/> :
             null
           }
-          <RecipesWrapper showLogin={this.state.showLogin} />
+          <RecipesBlock showLogin={this.state.showLogin} />
         </div>
       </div>
     )

@@ -1,11 +1,12 @@
 .recipe {
   width: 80%;
   margin: 0 auto;
+  vertical-align: top;
 
   @media (min-width: 650px) {
     display: inline-block;
     width: 50%;
-    padding: 0 10px;
+    padding: 10px;
   }
 
   &__title {

@@ -10,10 +10,6 @@ var config = {
   },
   module: {
     loaders: [
-      // {
-      //   test:   /\.css$/,
-      //   loader: "style-loader!css-loader!postcss-loader"
-      // },
       {
         test: /\.scss$/,
         loaders: ['style', 'css', 'sass']
@@ -24,23 +20,6 @@ var config = {
   resolve: {
     extensions: ['', '.js', '.jsx'],
   }
-  // plugins: (() => {
-  //   if (process.argv.indexOf('-p') !== -1) {
-  //     return [
-  //       new webpack.DefinePlugin({
-  //         'process.env': {
-  //           NODE_ENV: JSON.stringify('production'),
-  //         },
-  //       }),
-  //       new webpack.optimize.UglifyJsPlugin({
-  //         output: {
-  //           comments: false,
-  //         },
-  //       }),
-  //     ];
-  //   }
-  //   return [];
-  // })(),
 };
 
 module.exports = config;

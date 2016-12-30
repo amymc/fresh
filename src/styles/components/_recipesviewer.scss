@@ -2,6 +2,9 @@
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;
+  font-size: 1.6rem;
+  font-family: arial, sans-serif;
+
 
   &__inner-wrapper {
     position: relative;
@@ -12,7 +15,7 @@
     justify-content: space-between;
     position: fixed;
     max-width: 1140px;
-    margin: 0 16px;
+    margin: 0 auto;
     top: 0;
     right: 0;
     left: 0;

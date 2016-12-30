@@ -4,6 +4,7 @@ import NutritionalInfo  from './nutritionalinfo';
 class Recipe extends React.Component {
   constructor(props) {
     super(props);
+    console.log('test', props);
 
     this.state = {
       isFavourite: false,
@@ -34,7 +35,7 @@ class Recipe extends React.Component {
   }
 
   renderRating() {
-    var stars = [];
+    let stars = [];
     for (let i=1; i < 6; i++) {
       stars.push( 
         <span className={'recipe__rating' + (this.state.rating >= i ? ' recipe__rating--active' : '')} data-number={i} key={i} onClick={() => this.rateItem(i)}>
