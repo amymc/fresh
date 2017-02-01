@@ -46,7 +46,7 @@ class RecipesViewer extends React.Component {
             </h1>
             {this.state.isLoggedIn ?
               null :
-              <button className='recipes-viewer__button' onClick={() => this.displayLogin()}> Login </button>
+              <button className='recipes-viewer__button button' onClick={() => this.displayLogin()}> Login </button>
             }
           </header>
           {this.state.showLogin ?

@@ -17,7 +17,7 @@ const Login = (props) => {
         <span>Password: </span>
         <input className='login__input' type='password' name='password' required />
       </label>
-      <button type='submit'>
+      <button type='submit' className='button'>
         Login
       </button>
     </form>

@@ -18,6 +18,10 @@
     height: auto;
   }
 
+  &__table {
+    background-color: $wild-sand-grey;
+  }
+
   &__rating--active,
   &__button--selected {
     color: $hellofresh-lime;

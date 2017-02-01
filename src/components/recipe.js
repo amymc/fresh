@@ -1,4 +1,5 @@
 import React from 'react';
+import IngredientsTable from './ingredientstable';
 import NutritionalInfo  from './nutritionalinfo';
 
 class Recipe extends React.Component {
@@ -65,13 +66,7 @@ class Recipe extends React.Component {
           {this.renderCookingTime(recipe.time)}
           <p>Difficulty level: {recipe.difficulty}</p>
           <p>This is a recipe for the {recipe.products[0]}</p>
-          <table className='recipe__table'>
-            <tbody>
-              { recipe.ingredients.map((ingredient, index) => {
-                return <tr key={index}><td>{ingredient}</td></tr>
-              })}
-            </tbody>
-          </table>
+          <IngredientsTable ingredients={recipe.ingredients} />
           <NutritionalInfo {...recipe} />
         </div>
         <button className={'recipe__button' + (this.state.isFavourite ? ' recipe__button--selected' : '')} onClick={() => this.favouriteItem()}>&hearts;</button>
